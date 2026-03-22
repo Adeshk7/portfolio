@@ -57,7 +57,7 @@
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 800; line-height: 1.1;
       background: linear-gradient(90deg, #fff 0%, var(--cyan) 70%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;
     }
     .hero-text p {
       color: var(--muted); line-height: 1.7; margin-top: 0.8rem; max-width: 480px; font-size: 0.95rem;
@@ -166,9 +166,8 @@
     <h1>Adesh Khamkar</h1>
     <p>A person with hands-on experience in Business Development, Web Development, and Data Analysis — passionate about building solutions at the intersection of tech and business.</p>
     <div class="hero-links">
-      <a class="btn btn-primary" href="mailto:adeshkhamkar77@gmail.com">Contact Me</a>
+      <a class="btn btn-primary" href="mailto:adeshkhamkar77@gmail.com">adeshkhamkar77@gmail.com</a>
       <a class="btn btn-outline" href="https://www.linkedin.com/in/adeshkhamkar/" target="_blank">LinkedIn</a>
-      <a class="btn btn-outline" href="#">GitHub</a>
     </div>
   </div>
 </div>
@@ -383,4 +382,12 @@
       if (entry.isIntersecting) {
         navLinks.forEach(link => link.classList.remove('active'));
         const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-        if (active) active.classList
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(sec => observer.observe(sec));
+</script>
+</body>
+</html>
